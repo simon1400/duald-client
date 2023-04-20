@@ -14,7 +14,7 @@ module.exports = {
       user : 'root',
       host : ['164.90.191.142'],
       ref  : 'origin/main',
-      repo : 'git@github.com:simon1400/desua-clientv2.git',
+      repo : 'git@github.com:simon1400/duald-client.git',
       path : '/var/www/client',
       'post-deploy' : 'yarn && yarn build && pm2 reload ecosystem.config.js --env production',
     }
