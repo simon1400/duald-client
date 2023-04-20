@@ -1,0 +1,1 @@
+export const calculateSale = (salePrice: number, endPrice: number) => (100 - ((100 * salePrice) / endPrice)).toFixed(2)

@@ -1,0 +1,21 @@
+{
+  "price": "€ {{price}}",
+  "countInPack": "{{count}} pz",
+  "buy": "Comprare",
+  "name": "Nome",
+  "phone": "Telefono",
+  "company": "Nome dell'azienda",
+  "city": "Città",
+  "zip": "PSC",
+  "address": "Indirizzo",
+  "state": "Stato",
+  "subtotal": "Subtotale",
+  "tax": "IVA",
+  "order": "Ordina ora",
+  "checkoutNow": "Alla cassa",
+  "item": "articolo",
+  "infoLine": "Spedizione espressa gratuita",
+  "shipping": "Indirizzo di spedizione",
+  "billing": "Indirizzo di Biling",
+  "sameShipping": "Stesso indirizzo di spedizione"
+}

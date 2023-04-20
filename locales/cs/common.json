@@ -1,0 +1,21 @@
+{
+  "price": "{{price}} Kč",
+  "countInPack": "{{count}} ks",
+  "buy": "Koupit",
+  "name": "Jméno a Příjmení",
+  "phone": "Telefon",
+  "company": "Název firmy",
+  "city": "Město",
+  "zip": "PSČ",
+  "address": "Adresa",
+  "state": "Stát",
+  "subtotal": "Mezisoučet",
+  "tax": "DPH",
+  "order": "Objednat nyní",
+  "checkoutNow": "K pokladně",
+  "item": "položka",
+  "infoLine": "Expresní doprava zdarma",
+  "shipping": "Adresa odeslání",
+  "billing": "Fakturační adresa",
+  "sameShipping": "Stejná jako dodací adresa"
+}
