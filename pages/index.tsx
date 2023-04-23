@@ -56,7 +56,6 @@ export const getServerSideProps = wrapper.getServerSideProps(
 
 const Homepage = () => {
   const products = useSelector(selectProducts);
-  // const { t } = useTranslation("common")
 
   return (
     <Page>
@@ -65,7 +64,6 @@ const Homepage = () => {
           {products.map((item: any, idx: number) => (
             <Grid key={idx} item xs={12} sm={4} md={3}>
               <Card data={item} />
-              {/* {t("runVideo")} */}
             </Grid>
           ))}
         </Grid>
