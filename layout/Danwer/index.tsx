@@ -76,7 +76,7 @@ const Danwer = () => {
           </div>
         </div>
         <DanwerButton>
-          <Button size="large" href={`${lang}/checkout`}>{t`checkoutNow`} ({t("price", {price: getSum(basketItems)})})</Button>
+          {!!basket.length && <Button size="large" href={`${lang}/checkout`}>{t`checkoutNow`} ({t("price", {price: getSum(basketItems)})})</Button>}
           {/* <Button size="large" variant="outlined">
             View Cart
           </Button> */}

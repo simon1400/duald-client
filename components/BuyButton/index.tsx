@@ -6,6 +6,7 @@ import { changeBasket, selectBasket } from "stores/slices/basket";
 import { changeCountProduct } from "helpers/changeCountProduct";
 // import { removeEmpryItem } from "helpers/removeEmptyItem";
 import useTranslation from "next-translate/useTranslation";
+import { VariantType, useSnackbar } from 'notistack';
 
 interface IBuyButton {
   big?: boolean
@@ -39,9 +40,16 @@ const BuyButton: FC<IBuyButton> = ({product, big = false}) => {
     const {newCount, newBasket} = changeCountProduct(product, type, count, basket)
     setCount(newCount)
     dispatch(changeBasket(newBasket))
+    if(type === '-') {
+      enqueueSnackbar(`-1 ${product.title} - ${product.variantTitle}`, { variant: 'error' });
+    }else{
+      enqueueSnackbar(`+1 ${product.title} - ${product.variantTitle}`, { variant: 'info' });
+    }
   }
 
-  const buyFirst = () => {
+  const { enqueueSnackbar } = useSnackbar();
+
+  const buyFirst = () => {    
     let oldBasket: BasketItem[] = [...basket]
     setCount(1)
     oldBasket.push({
@@ -51,6 +59,7 @@ const BuyButton: FC<IBuyButton> = ({product, big = false}) => {
       count: 1
     })
     dispatch(changeBasket(oldBasket))
+    enqueueSnackbar(`${product.title} - ${product.variantTitle} ha aggiunto`, { variant: 'success' });
   }
 
   return (

@@ -1,4 +1,4 @@
-import { Box, Tab, Tabs } from "@mui/material";
+import { Box, Container, Tab, Tabs } from "@mui/material";
 import { CategoryNavS } from "./styled";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,22 +31,23 @@ const CategoryNav = () => {
   };
 
   return (
-    <CategoryNavS>
-      <Box sx={{ width: "100%", bgcolor: "background.paper" }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          // variant="scrollable"
-          // scrollButtons={false}
-          centered={true}
-          aria-label="scrollable prevent tabs example"
-        >
-          {categoryNav.map((item: any, idx: number) => (
-            <Tab key={idx} label={item.title} />
-          ))}
-        </Tabs>
-      </Box>
-    </CategoryNavS>
+    <Container>
+      <CategoryNavS>
+        <Box sx={{ width: "100%", bgcolor: "background.paper" }}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            variant="scrollable"
+            scrollButtons={false}
+            aria-label="scrollable prevent tabs example"
+          >
+            {categoryNav.map((item: any, idx: number) => (
+              <Tab key={idx} label={item.title} />
+            ))}
+          </Tabs>
+        </Box>
+      </CategoryNavS>
+    </Container>
   );
 };
 

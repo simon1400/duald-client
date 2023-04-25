@@ -55,7 +55,7 @@ const Card: FC<ICard> = ({ data }) => {
         <ControlCard>
           <Price data={data.variants[variant]} />
           <BuyButton
-            product={{ id: data.id, idVariant: data.variants[variant].id, variantTitle: data.variants[variant].title }}
+            product={{ id: data.id, title: data.title, idVariant: data.variants[variant].id, variantTitle: data.variants[variant].title }}
           />
         </ControlCard>
       </ContentCard>

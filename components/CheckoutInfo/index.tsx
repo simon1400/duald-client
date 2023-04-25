@@ -47,6 +47,14 @@ const CheckoutInfo: FC<ICheckoutInfo> = ({ prefix, state, handle }) => {
       </div>
       <div>
         <Input
+          name={prefix + "_vat"}
+          label={t`vat`}
+          value={state.vat}
+          onChange={(e) => handle("vat", e.target.value)}
+        />
+      </div>
+      <div>
+        <Input
           name={prefix + "_zip"}
           label={t`zip`}
           value={state.zip}

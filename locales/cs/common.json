@@ -11,6 +11,7 @@
   "state": "Stát",
   "subtotal": "Mezisoučet",
   "tax": "DPH",
+  "vat": "IČO",
   "order": "Objednat nyní",
   "checkoutNow": "K pokladně",
   "item": "položka",
