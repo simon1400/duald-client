@@ -45,7 +45,7 @@ export default async function handler(
         res.status(err.code).json(err.response);
       }
     }
+  }else{
+    res.status(200).json({name: 'good'});
   }
-
-  res.status(200).json({name: 'good'});
 }
