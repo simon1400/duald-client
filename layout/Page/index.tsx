@@ -111,15 +111,15 @@ const Page: FC<IPage> = ({ children, className = "", id = "" }) => {
         {tags && <meta name="article:tag" content={tags} />}
       </Head>
 
-      {/*<!-- Google Tag Manager -->*/}
-      {/* <Script defer strategy="lazyOnload" id="gtm">
-        {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.rel='preconnect';j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','${global.gtm}');`}
-      </Script> */}
-      {/*<!-- End Google Tag Manager -->*/}
+      {/* <!-- Google tag (gtag.js) --> */}
+      <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-2CMP76GFG2" />
+      <Script id="gtag" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-2CMP76GFG2');`}
+      </Script>
 
       {/* Hotjar Tracking Code for my site */}
       <Script id="hotjar">
@@ -134,17 +134,6 @@ const Page: FC<IPage> = ({ children, className = "", id = "" }) => {
       </Script>
 
       {/* <Script type="text/javascript" src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.0/dist/cookieconsent.js" /> */}
-
-      {/*<!-- Google Tag Manager (noscript) -->*/}
-      {/* <noscript>
-        <iframe
-          src={`https://www.googletagmanager.com/ns.html?id='${global.gtm}'}`}
-          height="0"
-          width="0"
-          style={{ display: "none", visibility: "hidden" }}
-        ></iframe>
-      </noscript> */}
-      {/*<!-- End Google Tag Manager (noscript) -->*/}
 
       <main id={id} className={className}>{children}</main>
     </>

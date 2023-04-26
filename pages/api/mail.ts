@@ -7,7 +7,7 @@ const mailersend = new MailerSend({
   apiKey: process.env.MAILERSEND_TOKEN || '',
 });
 
-const sentFrom = new Sender("info@desua.cz", "DESUA.CZ - Czech shop");
+const sentFrom = new Sender("info@desua.cz", "DUALD.EU - Czech shop");
 
 // const APP_API = process.env.APP_API;
 
