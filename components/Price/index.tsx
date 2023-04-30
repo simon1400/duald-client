@@ -21,15 +21,14 @@ const Price: FC<IPrice> = ({data, big = false}) => {
   return (
     <PriceS big={big}>
       <div className="dph-incl">
-        <span>{t('price', { price: data.salePrice ? data.salePrice.toFixed(2) : getPrice(data) })}</span>
-        {/* <span>IVA incl.</span> */}
+        <span>{t('price', { price: data.salePrice ? data.salePrice.toFixed(2) : getPrice(data) })} <span>senza IVA</span></span>
       </div>
       {/* <div>
         <span>{t('price', { price: data.salePrice ? (data.salePrice - (data.salePrice * 0.21)).toFixed(2) : (getPrice(data) - (getPrice(data) * 0.21)).toFixed(2) })} <span>senza IVA</span></span>
         {data.salePrice && <del>{t('price', { price: getPrice(data) })}</del>}
       </div> */}
       <div>
-        <small>x {t('countInPack', { count: data.countInPack })} | {data.amount} l</small>
+        <small>x {t('countInPack', { count: data.countInPack })} | {data.amount} L</small>
       </div>
     </PriceS>
   )

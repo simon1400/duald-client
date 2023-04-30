@@ -22,10 +22,15 @@ export const CheckoutSumS = styled(Paper)`
   }
   .sum-total{
     text-align: right;
-    font-size: 25px;
     font-weight: 600;
     margin-bottom: 25px;
     margin-top: 0;
+    >span {
+      font-size: 25px;
+    }
+    b{
+      font-size: 25px;
+    }
   }
   button{
     width: 100%;

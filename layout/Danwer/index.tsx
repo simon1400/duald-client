@@ -19,7 +19,7 @@ import useTranslation from "next-translate/useTranslation";
 const openSans = Open_Sans({ subsets: ["latin", "cyrillic"] });
 
 const Danwer = () => {
-  const { t, lang } = useTranslation('common')
+  const { t, lang } = useTranslation("common");
   const { danwer } = useSelector(selectAllState);
   const basket = useSelector(selectBasket);
   const dispatch = useDispatch();
@@ -38,10 +38,12 @@ const Danwer = () => {
   };
 
   useEffect(() => {
-    getBasket(basket, basketItems, getBasketItems, router.locale).then(result => {
-      // @ts-ignore
-      setBasketItems(result);
-    })
+    getBasket(basket, basketItems, getBasketItems, router.locale).then(
+      (result) => {
+        // @ts-ignore
+        setBasketItems(result);
+      }
+    );
   }, [basket]);
 
   return (
@@ -57,7 +59,9 @@ const Danwer = () => {
           <div className="danwer-top">
             <div>
               <ShoppingBagOutlinedIcon fontSize="medium" />
-              <span>{basketItems.length} {t`item`}</span>
+              <span>
+                {basketItems.length} {t`item`}
+              </span>
             </div>
             <div>
               <IconButton
@@ -76,7 +80,11 @@ const Danwer = () => {
           </div>
         </div>
         <DanwerButton>
-          {!!basket.length && <Button size="large" href="/checkout">{t`checkoutNow`} ({t("price", {price: getSum(basketItems)})})</Button>}
+          {!!basket.length && (
+            <Button size="large" href="/checkout">
+              {t`checkoutNow`} ({t("price", { price: getSum(basketItems) })})
+            </Button>
+          )}
           {/* <Button size="large" variant="outlined">
             View Cart
           </Button> */}

@@ -10,7 +10,7 @@
   "address": "Indirizzo",
   "state": "Stato",
   "subtotal": "Subtotale",
-  "tax": "IVA",
+  "tax": "IVA +21%",
   "vat": "IVA codice",
   "order": "Ordina ora",
   "checkoutNow": "Alla cassa",

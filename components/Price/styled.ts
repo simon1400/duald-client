@@ -13,6 +13,7 @@ export const PriceS = styled.div<{big?: boolean}>(({theme, big = false}) => `
       span{
         color: rgb(125, 135, 156); 
         font-size: 10px;
+        font-weight: normal;
       }
     }
     del{

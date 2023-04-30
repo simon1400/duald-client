@@ -14,10 +14,10 @@ const CheckoutSum: FC<ICheckoutSum> = ({sum, handle}) => {
   
   return (
     <CheckoutSumS>
-      <div><span>{t`subtotal`}:</span><b>{t("price", {price: (sum - (sum * 0.21)).toFixed(2)})}</b></div>
+      <div><span>{t`subtotal`}:</span><b>{t("price", {price: sum})}</b></div>
       <div><span>{t`tax`}:</span><b>{t("price", {price: (sum * 0.21).toFixed(2)})}</b></div>
       <hr />
-      <p className="sum-total">{t("price", {price: sum})}</p>
+      <div className="sum-total"><span>Totale:</span><b>{t("price", {price: (sum + (sum * 0.21)).toFixed(2)})}</b></div>
       {/* <Input placeholder="Voucher" />
       <Button size="large" variant="outlined">Apply voucher</Button> */}
       <Button size="large" onClick={() => handle()}>{t`order`}</Button>
