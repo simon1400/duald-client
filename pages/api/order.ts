@@ -43,12 +43,11 @@ export default async function handler(
     });
   });
 
-  console.log(basketGenerate)
-
   const dataSend = {
     billing: sameAddress ? shiping : billing, 
     shiping, 
     sum, 
+    sumVat: priceWithVat(sum),
     sameAddress, 
     basket: basketGenerate,
     idOrder: Math.floor(Math.random() * 1000000000)
