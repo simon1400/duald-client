@@ -1,1 +1,1 @@
-export const priceWithVat = (price: any) => price + (price * 0.21)
+export const priceWithVat = (price: any) => +price + (+price * 0.21)

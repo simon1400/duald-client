@@ -43,6 +43,8 @@ export default async function handler(
     });
   });
 
+  console.log(basketGenerate)
+
   const dataSend = {
     billing: sameAddress ? shiping : billing, 
     shiping, 
