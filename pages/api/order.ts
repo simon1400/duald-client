@@ -1,5 +1,6 @@
 import axios from "axios";
 import { getPrice } from "helpers/getPrice";
+import { priceWithVat } from "helpers/priceWithVat";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const APP_API = process.env.APP_API;
@@ -26,6 +27,15 @@ export default async function handler(
             item.variants[0].countInPack
           ).toFixed(2)
         : (getPrice(item.variants[0]) *
+          item.count *
+          item.variants[0].countInPack).toFixed(2),
+      priceVat: item.variants[0].salePrice
+        ? (
+            priceWithVat(item.variants[0].salePrice) *
+            item.count *
+            item.variants[0].countInPack
+          ).toFixed(2)
+        : (priceWithVat(getPrice(item.variants[0])) *
           item.count *
           item.variants[0].countInPack).toFixed(2),
       countInPack: item.variants[0].countInPack,

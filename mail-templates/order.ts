@@ -1,3 +1,5 @@
+import { priceWithVat } from "helpers/priceWithVat";
+
 export const orderMail = (order: any) => {
   const timeElapsed = Date.now();
   const today = new Date(timeElapsed);
@@ -939,7 +941,7 @@ export const orderMail = (order: any) => {
                                                 font-size: 14px;
                                               "
                                             >
-                                              ${item.count} pz
+                                              ${item.countInPack} pz x ${item.count}
                                             </p>
                                           </td>
                                         </tr>
@@ -1084,11 +1086,11 @@ export const orderMail = (order: any) => {
                                           font-size: 14px;
                                         "
                                       >
-                                        Subtotale:&nbsp;<strong>€ ${(order.sum - (order.sum * 0.21)).toFixed(2)}</strong
+                                        Subtotale:&nbsp;<strong>€ ${order.sum.toFixed(2)}</strong
                                         ><br />Spedizione:&nbsp;<strong
                                           >€ 0.00</strong
                                         ><br />IVA:&nbsp;<strong>€ ${(order.sum * 0.21).toFixed(2)}</strong
-                                        ><br />Totale:&nbsp;<strong>€ ${order.sum.toFixed(2)}</strong>
+                                        ><br />Totale:&nbsp;<strong>€ ${priceWithVat(order.sum).toFixed(2)}</strong>
                                       </p>
                                     </td>
                                   </tr>
