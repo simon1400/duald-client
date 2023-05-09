@@ -1,35 +1,47 @@
 import { Container, Grid, Typography } from "@mui/material"
-import { CopyrightLogo, FooterS } from "./styled"
-import Logo from 'public/assets/kersnerova-logo.svg'
-import Hardart from 'public/assets/hardart.svg'
-import globalQuery from "queries/global"
-import { useQuery } from "@apollo/client"
-import { useRouter } from "next/router"
+import { FooterS } from "./styled"
+import Logo from "components/Logo"
+// import globalQuery from "queries/global"
+// import { useQuery } from "@apollo/client"
+// import { useRouter } from "next/router"
 
 const Footer = () => {
 
-  const router = useRouter()
+  // const router = useRouter()
 
-  const {data, loading} = useQuery(globalQuery, {
-    variables: {locale: router.locale}
-  })
+  // const {data, loading} = useQuery(globalQuery, {
+  //   variables: {locale: router.locale}
+  // })
 
-  if(loading) {
-    return <></>
-  }
+  // if(loading) {
+  //   return <></>
+  // }
 
   return (
     <FooterS>
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Grid container>
-          <Grid item xs={6}>
-            <Logo fill="#fff" width="286" height="50" />
-            <Typography component="div" dangerouslySetInnerHTML={{__html: data.global.data.attributes.footerInfo}} />
+          <Grid item xs={12} md={4}>
+            <Logo />
+            <Typography component="div">
+              <p>Azienda di logistica con consegna gratuita di prodotti cechi nel nord Italia.</p>
+              <p>Tutti i diritti riservati.</p>
+            </Typography>
           </Grid>
-          <Grid item xs={6}>
-            <CopyrightLogo href="mailto:daniel.kokes@gmail.com,dmytro@pechunka.com">
-              <Hardart />
-            </CopyrightLogo>
+          <Grid item xs={12} md={2}>
+            
+          </Grid>
+          <Grid item xs={12} md={2}>
+            
+          </Grid>
+          <Grid item xs={12} md={2}>
+            <ul>
+              <li>Dmytro Pechunka</li>
+              <li>IČO: 17407613</li>
+              <li>Brno-střed, Zábrdovice</li>
+              <li>Bratislavská 184/2a</li>
+              <li>602 00</li>
+            </ul>
           </Grid>
         </Grid>
       </Container>

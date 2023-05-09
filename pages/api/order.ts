@@ -5,10 +5,6 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 const APP_API = process.env.APP_API;
 
-type Data = {
-  name: string;
-};
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse

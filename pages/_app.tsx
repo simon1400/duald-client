@@ -18,6 +18,7 @@ import Danwer from "layout/Danwer";
 import {persistStore} from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import { SnackbarProvider } from 'notistack';
+import Footer from "layout/Footer";
 
 const openSans = Open_Sans({ subsets: ["latin", "cyrillic"] });
 
@@ -53,7 +54,7 @@ const MyApp: FC<MyAppProps> = ({ Component, ...rest }) => {
                   <Header />
                   <CategoryNav />
                   <Component {...pageProps} />
-                  {/* <Footer /> */}
+                  <Footer />
                   <Modal />
                   <Danwer />
                 </SnackbarProvider>

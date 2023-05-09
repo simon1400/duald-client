@@ -82,7 +82,7 @@ const Checkout: NextPage = () => {
     });
   };
 
-  const [sameAddress, setSameAddress] = useState(false);
+  const [sameAddress, setSameAddress] = useState(true);
 
   const handleOrder = async () => {
     await axios.post(`/api/order`, {
