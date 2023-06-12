@@ -5,9 +5,29 @@ import Lang from "components/Lang"
 import useTranslation from "next-translate/useTranslation"
 import PhoneIcon from '@mui/icons-material/Phone';
 import MailIcon from '@mui/icons-material/Mail';
+import { useQuery } from "@apollo/client"
+import { getContact } from "queries/contact"
+import { useRouter } from "next/router"
 
 const InfoLine = () => {
   const { t } = useTranslation('common')
+
+  const router = useRouter()
+
+  const {data, loading} = useQuery(getContact, {
+    variables: {
+      locale: router.locale
+    }
+  })
+
+  if(loading) {
+    return null
+  }
+
+  console.log(data)
+
+  const contact = data.contact.data.attributes
+
   return (
     <InfoLineWrapS>
       <Container>
@@ -17,13 +37,13 @@ const InfoLine = () => {
               <Chip label="HOT"/>
               <Typography>{t`infoLine`}</Typography>
             </div> */}
-            <ContactItem href="tel:+393462631996">
+            <ContactItem href={contact.phone.link}>
               <PhoneIcon />
-              <Typography>+39 346 263 1996</Typography>
+              <Typography>{contact.phone.text}</Typography>
             </ContactItem>
-            <ContactItem href="mailto:info@desua.cz">
+            <ContactItem href={contact.email.link}>
               <MailIcon />
-              <Typography>info@desua.cz</Typography>
+              <Typography>{contact.email.text}</Typography>
             </ContactItem>
           </LeftS>
           <RightS>
