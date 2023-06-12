@@ -81,7 +81,7 @@ const Danwer = () => {
         </div>
         <DanwerButton>
           {!!basket.length && (
-            <Button size="large" href="/checkout">
+            <Button size="large" href={`/${router.locale}/checkout`}>
               {t`checkoutNow`} ({t("price", { price: getSum(basketItems) })})
             </Button>
           )}
